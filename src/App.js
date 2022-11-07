@@ -7,7 +7,7 @@ import ReactGA from 'react-ga';
 // Layouts
 import LayoutDefault from './layouts/LayoutDefault';
 
-// Views 
+// Pages
 import Home from './pages/Home';
 
 // Initialize Google Analytics
