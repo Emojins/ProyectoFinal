@@ -99,7 +99,6 @@ const Header = ({
                 </span>
               </button>
               <nav
-              
                 ref={nav}
                 className={
                   classNames(
@@ -112,17 +111,13 @@ const Header = ({
                       'list-reset text-xs',
                       navPosition && `header-nav-${navPosition}`
                     )}>
-                    <li>
-                      <Link to="./register" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Registrarse</Link>
-                    </li>
+                  
                   </ul>
                   {!hideSignin &&
                     <ul
                       className="list-reset header-nav-right"
                     >
-                      <li>
-                        <Link to="./login" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Iniciar Sesion</Link>
-                      </li>
+
                     </ul>}
                 </div>
               </nav>

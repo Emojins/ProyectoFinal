@@ -84,13 +84,12 @@ const Hero = ({
               data-video="https://player.vimeo.com/video/174002812"
               href="#0"
               aria-controls="video-modal"
-              onClick={openModal}
+              onMouseDown={openModal}
             >
               <Image
                 className="has-shadow"
                 src={require('./../../assets/images/video-placeholder.jpg')}
-                alt="Hero"
-                width={896}
+                width={800}
                 height={504} />
             </a>
           </div>

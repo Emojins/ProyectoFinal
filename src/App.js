@@ -3,7 +3,8 @@ import { useLocation, Switch } from 'react-router-dom';
 import AppRoute from './utils/AppRoute';
 import ScrollReveal from './utils/ScrollReveal';
 import ReactGA from 'react-ga';
-import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/css/bootstrap.min.css";
+//import "animate.css/animate.min.css";
 // Layouts
 import LayoutDefault from './layouts/LayoutDefault';
 import NavBar from './layouts/NavBar';
@@ -40,6 +41,7 @@ const App = () => {
           <AppRoute exact path="/register" component={Register} layout={NavBar}/>
           <AppRoute exact path="/login" component={Login} layout={LayoutDefault}/>
           <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
+          <AppRoute exact path="*" component={Error} layout={LayoutDefault}/>
         </Switch>
       )} />
   );
