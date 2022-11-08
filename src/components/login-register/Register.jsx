@@ -9,7 +9,7 @@ const Auth = () => {
           <div className="Auth-form-content">
                   <h3 className="Auth-form-title">Registrarse</h3>
   
-                      <div className="form-group mt-3">
+                      <div>
                           <label>Nombre de Usuario</label> <br />
                           <input
                           type="text"
@@ -18,7 +18,7 @@ const Auth = () => {
                           />
                       </div>
   
-                      <div className="form-group mt-3">
+                      <div>
                           <label>Correo Electronico</label> <br />
                           <input
                           type="email"
@@ -27,7 +27,7 @@ const Auth = () => {
                           />
                       </div>
   
-                      <div className="form-group mt-3">
+                      <div>
                           <label>Contraseña</label> <br />
                           <input
                           type="password"
@@ -36,7 +36,7 @@ const Auth = () => {
                           />
                       </div>
   
-                      <div className="form-group mt-3">
+                      <div>
                           <label>Repetir Contraseña</label> <br />
                           <input
                           type="password"

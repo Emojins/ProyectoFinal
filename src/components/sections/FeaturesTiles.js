@@ -45,7 +45,7 @@ const FeaturesTiles = ({
 
   const sectionHeader = {
     title: 'El músico es probablemente el más modesto de los animales, pero también el más orgulloso',
-    paragraph: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    paragraph: 'A continuación se muestran las características de la aplicación. Comparte tus ideas o listas de reproducción con nosotros.'
   };
 
   return (

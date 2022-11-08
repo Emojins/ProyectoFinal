@@ -15,7 +15,7 @@ const IniciarSesion = () => {
                
               </span>
             </div>
-            <div className="form-group mt-3">
+            <div>
               <label>Correo electronico</label>
               <input
                 type="email"
@@ -23,7 +23,7 @@ const IniciarSesion = () => {
                 placeholder="Introduce tu correo"
               />
             </div>
-            <div className="form-group mt-3">
+            <div>
               <label>Contraseña</label>
               <input
                 type="password"
