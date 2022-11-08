@@ -22,6 +22,7 @@ const trackPage = page => {
 
 const App = () => {
 
+
   const childRef = useRef();
   let location = useLocation();
 
