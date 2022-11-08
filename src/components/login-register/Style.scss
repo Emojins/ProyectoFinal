@@ -1,18 +1,18 @@
-.App {
-    background-color: rgb(12, 208, 143);
+.body {
+    background-image: url("/public/closeup-black-electric-guitar-on-dark-background.jpg");
   }
   .Auth-form-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 100vh;
+    height: 120vh;
   }
   
   .Auth-form {
     width: 520px;
     box-shadow: rgba(210, 21, 21, 0) 1px 1px 10px;
-    padding-top: 30px;
+    padding-top: 0px;
     padding-bottom: 20px;
     border-radius: 8px;
     background-color: rgba(173, 152, 237, 0.672);

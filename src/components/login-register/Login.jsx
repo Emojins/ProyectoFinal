@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AuthContext } from '../../context/AuthContext'
+
 
 const IniciarSesion = () => {
+
+  const login = useContext(AuthContext)
+  
   return (
     <div className="Auth-form-container">
 

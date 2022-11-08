@@ -69,6 +69,7 @@ const FeaturesSplit = ({
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
                 Donde las palabras fallan, la música habla
                   </div>
+                  <hr/>
                 <h3 className="mt-0 mb-12">
                   Playlist para tu evento
                   </h3>
@@ -83,7 +84,7 @@ const FeaturesSplit = ({
                 )}
                 data-reveal-container=".split-item">
                 <Image
-                  src={require('./../../assets/images/features-split-image-01.png')}
+                  src={require('./../../assets/images/section3.jpg')}
                   alt="Features split 01"
                   width={528}
                   height={396} />
@@ -95,11 +96,12 @@ const FeaturesSplit = ({
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
                 Donde las palabras fallan, la música habla
                   </div>
+                  <hr/>
                 <h3 className="mt-0 mb-12">
-                  Playlist para tu verano
+                  Playlist para videojuegos
                   </h3>
                 <p className="m-0">
-                  Te ayudamos a elegir la mejor música para tu verano, ya sea para ir a la playa, para ir a la piscina, para ir a la montaña, etc.
+                  Te ayudamos a elegir la mejor música para tus videojuegos, ya sea un juego de rol, un juego de mesa, un juego de cartas, etc.
                   </p>
               </div>
               <div className={
@@ -109,7 +111,7 @@ const FeaturesSplit = ({
                 )}
                 data-reveal-container=".split-item">
                 <Image
-                  src={require('./../../assets/images/features-split-image-02.png')}
+                  src={require('./../../assets/images/section2.jpg')}
                   alt="Features split 02"
                   width={528}
                   height={396} />
@@ -121,6 +123,7 @@ const FeaturesSplit = ({
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
                 Donde las palabras fallan, la música habla
                   </div>
+                  <hr/>
                 <h3 className="mt-0 mb-12">
                   Playlist para tu viaje
                   </h3>
@@ -135,7 +138,7 @@ const FeaturesSplit = ({
                 )}
                 data-reveal-container=".split-item">
                 <Image
-                  src={require('./../../assets/images/features-split-image-03.png')}
+                  src={require('./../../assets/images/section4.jpg')}
                   alt="Features split 03"
                   width={528}
                   height={396} />
