@@ -4,14 +4,16 @@ import AppRoute from './utils/AppRoute';
 import ScrollReveal from './utils/ScrollReveal';
 import ReactGA from 'react-ga';
 import "bootstrap/dist/css/bootstrap.min.css";
-//import "animate.css/animate.min.css";
+
 // Layouts
 import LayoutDefault from './layouts/LayoutDefault';
 import NavBar from './layouts/NavBar';
+
 // Pages
 import Home from './pages/Home';
 import Register from './pages/Register';
 import Login from './pages/Login';
+import Error from './pages/Error';
 
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
@@ -42,7 +44,7 @@ const App = () => {
           <AppRoute exact path="/register" component={Register} layout={NavBar}/>
           <AppRoute exact path="/login" component={Login} layout={LayoutDefault}/>
           <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
-          <AppRoute exact path="*" component={Error} layout={LayoutDefault}/>
+          <AppRoute exact path="/*" component={Error} layout={LayoutDefault}/>
         </Switch>
       )} />
   );
