@@ -46,7 +46,7 @@ const FeaturesTiles = ({
   );
 
   const sectionHeader = {
-    title: 'El músico es probablemente el más modesto de los animales, pero también el más orgulloso',
+    title: 'El músico es probablemente el más modesto de los animales.',
     paragraph: 'A continuación se muestran las características de la aplicación. Comparte tus ideas o listas de reproducción con nosotros.'
   };
 
@@ -55,14 +55,16 @@ const FeaturesTiles = ({
       {...props}
       className={outerClasses}
     >
-      <div className="container"/>
+      <div className="container">
         <div className={innerClasses}>
           <SectionHeader data={sectionHeader} className="center-content" />
            <div className={tilesClasses}>
+            <div className="reveal-from-bottom">
 
-           <Cards/>
-          
+                  <Cards/>
 
+            </div>
+           </div>
         </div>
       </div>
     </section>

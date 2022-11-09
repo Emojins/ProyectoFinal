@@ -2,13 +2,13 @@ import React from "react";
 import Card from "./card";
 
 import image1 from "../../assets/images/section1.jpg";
-import image2 from '../../assets/images/video-placeholder.jpg'
-import image3 from '../../assets/images/guitar.jpg'
-import image4 from '../../assets/images/section2.jpg'
+import image2 from '../../assets/images/rock.jpg'
+import image3 from '../../assets/images/metal.jpg'
+import image4 from '../../assets/images/kpop.jpg'
 import image5 from '../../assets/images/section3.jpg'
-import image6 from '../../assets/images/section4.jpg'
-import image7 from '../../assets/images/section2.jpg'
-import image8 from '../../assets/images/section2.jpg'
+import image6 from '../../assets/images/regueton.jpg'
+import image7 from '../../assets/images/trap.jpg'
+import image8 from '../../assets/images/chupac.jpg'
 const cards = [
   {
     id: 1,
