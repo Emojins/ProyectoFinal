@@ -22,7 +22,8 @@ const usuarioSchema = new Schema({
 
     role:{
         type: String,
-        defaul:"user"
+        // required: true
+        
     }
 },{
     versionKey: false,

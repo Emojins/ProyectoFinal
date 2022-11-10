@@ -13,6 +13,7 @@ conexion();
 
 app.use(express.json())
 app.set('view engine', 'ejs')
+app.use(cors())
 
 app.use(require("./src/routes/tareas.routes"))
 app.use(require("./src/routes/user.routes"))
