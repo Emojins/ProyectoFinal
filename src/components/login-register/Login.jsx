@@ -1,11 +1,61 @@
-import React, { useContext } from 'react'
+import React, { useContext,useState } from 'react'
 import { AuthContext } from '../../context/AuthContext'
 
 
 const IniciarSesion = () => {
 
-  const login = useContext(AuthContext)
-  
+  // const login = useContext(AuthContext)
+
+
+  const opciones={
+    method:'POST',
+    headers:{
+    'Content-Type': 'application/json'
+    }
+    
+    }
+    const [registro,setRegistro]=useState({
+        username:"",
+        password:"" 
+    
+    });
+    
+    const handleInput=({target})=>{
+    setRegistro({
+    ...registro,
+    [target.name]:target.value
+    
+    
+    })
+    console.log(target.value)
+    
+    
+    }
+    
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        
+        
+        (async ()=>{
+        
+        
+        opciones.body=JSON.stringify(registro)
+        console.log('llegue aca')
+        console.log('Registro: ', registro)
+        console.log(opciones)
+        const respuesta = await fetch('http://localhost:4000/usuario', opciones)
+        console.log('pase el fecth')
+        if (!respuesta.ok)alert('Revise las credenciales y vuelva a intentarlo')
+        console.log('todavia no mori')
+        const data= await respuesta.json()
+        //console.log(data)
+        
+        
+        })()
+        
+                
+        }
+
   return (
     <div className="Auth-form-container">
 
@@ -21,9 +71,9 @@ const IniciarSesion = () => {
               </span>
             </div>
             <div>
-              <label>Correo electronico</label>
+              <label>Usuario</label>
               <input
-                type="email"
+                type="text" name='username' onChange={handleInput}
                 className="form-control mt-1"
                 placeholder="Introduce tu correo"
               />
@@ -31,13 +81,13 @@ const IniciarSesion = () => {
             <div>
               <label>Contraseña</label>
               <input
-                type="password"
+                type="password" name="password" onChange={handleInput}
                 className="form-control mt-1"
                 placeholder="Introduce tu contraseña"
               />
             </div>
             <div className="d-grid gap-2 mt-3">
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn btn-primary"  onClick={handleSubmit}>
                 Enviar
               </button>
             </div>
