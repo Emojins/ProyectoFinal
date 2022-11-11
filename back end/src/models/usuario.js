@@ -10,6 +10,12 @@ const usuarioSchema = new Schema({
         type: String,
         required: true
     },
+
+    confirmpassw:{
+            type: String
+            
+    },
+
     email: {
         type: String,
        

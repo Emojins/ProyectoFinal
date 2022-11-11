@@ -6,7 +6,7 @@ const cors =require('cors')
 require("dotenv").config()
 const app=express()
 
-const {body, validationResult}=require('express-validator')
+// const {body, validationResult}=require('express-validator')
 
 const conexion = require('./src/db/database')
 conexion();
@@ -31,7 +31,7 @@ app.get('/',(req,res)=>{
 puerto=process.env.PORT || 4000
 
 app.listen(puerto,()=>{
-console.log(`se inicio el servidor en http://localhost:${puerto}`)
+console.log(`se inicio el servidor en http://localhost:4000`)
 })
 
 

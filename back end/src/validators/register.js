@@ -1,18 +1,19 @@
-const { check } = require('express-validator');
-const{validatorResult}= require('../helpers/validateHelper')
+
+const{validationResult}= require('express-validator')
 
 
-const validateCreate=[
+const validateCreate=(req,res,next) => {
+ const errors=validationResult(req);
 
-    check(username)
-    .exists()
-    .not()
-    .isEmpty(),
-    check(email)
-    .exists()
-    .isEmail(),
-    check(password)
-    .
-]
+if(!errors.isEmpty()){
 
-module.exports={ validateCreate }
+return res.status(400).json({errors: errors.array()});
+
+}
+
+next();
+
+    }
+
+
+module.exports= validateCreate 

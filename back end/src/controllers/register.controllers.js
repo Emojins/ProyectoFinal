@@ -26,7 +26,7 @@ const ctrlUsuarios={}
 // Controlador para crear nuevo usuario en la Base de Datos.
 ctrlUsuarios.postUsuarios = async (req, res) => {
     // Se obtienen los datos enviados por método POST
-    const { username, password, email,role } = req.body;
+    const { username, password,confirmpassw,email,role } = req.body;
 
 const newPassword=bcrypt.hashSync(password,10)
 
@@ -36,6 +36,7 @@ const newPassword=bcrypt.hashSync(password,10)
         username,
         password: newPassword,
         email,
+        confirmpassw,
         role
     })
 
