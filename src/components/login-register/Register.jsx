@@ -13,10 +13,13 @@ headers:{
 const [registro,setRegistro]=useState({
     username:"",
     email:"",
+    password:"" ,
+    confirmpassw:"" ,
     role:"",
-    password:"" 
 
 });
+
+const [error, setError] = useState('');
 
 const handleInput=({target})=>{
 setRegistro({
@@ -36,14 +39,16 @@ const handleSubmit=(e)=>{
     
     (async ()=>{
     
-    
+     
     opciones.body=JSON.stringify(registro)
     console.log('llegue aca')
     console.log('Registro: ', registro)
     console.log(opciones)
     const respuesta = await fetch('http://localhost:4000/usuario', opciones)
     console.log('pase el fecth')
-    if (!respuesta.ok)alert('Revise las credenciales y vuelva a intentarlo')
+    if (!respuesta.ok){
+        setError('Revise las credenciales yss')
+        alert('Revise las credenciales yss')}
     console.log('todavia no mori')
     const data= await respuesta.json()
     //console.log(data)
@@ -113,6 +118,12 @@ const handleSubmit=(e)=>{
                           <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
                           Enviar
                           </button>
+                
+                        <div name="alerta" >
+                            { error.length > 0 && error}
+                        </div>
+
+
                       </div>
                       <div className="text-center">
                           Ya estas registrado?{" "}

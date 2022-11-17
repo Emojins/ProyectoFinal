@@ -12,14 +12,15 @@ const IniciarSesion = () => {
     headers:{
     'Content-Type': 'application/json'
     }
+  }
     
-    }
+    
+
     const [registro,setRegistro]=useState({
         username:"",
         password:"" 
-    
-    });
-    
+      })
+
     const handleInput=({target})=>{
     setRegistro({
     ...registro,
@@ -43,9 +44,11 @@ const IniciarSesion = () => {
         console.log('llegue aca')
         console.log('Registro: ', registro)
         console.log(opciones)
-        const respuesta = await fetch('http://localhost:4000/usuario', opciones)
+        const respuesta = await fetch('http://localhost:4000/login', opciones)
         console.log('pase el fecth')
-        if (!respuesta.ok)alert('Revise las credenciales y vuelva a intentarlo')
+        if (!respuesta.ok) {
+          alert('Revise las credenciales y vuelva a intentarlo')
+        }
         console.log('todavia no mori')
         const data= await respuesta.json()
         //console.log(data)
@@ -90,6 +93,8 @@ const IniciarSesion = () => {
               <button type="submit" className="btn btn-primary"  onClick={handleSubmit}>
                 Enviar
               </button>
+
+              <div id='rr'></div>
             </div>
             <p className="text-center mt-2">
             <a href="#">Olvidaste tu contraseña?</a>

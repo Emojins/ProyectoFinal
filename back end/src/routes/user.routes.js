@@ -22,7 +22,7 @@ validateCreate= require('../validators/register')
 router.post("/usuario", [
     check('username', "ingrese un usuario")
     .exists()
-    .isLength({max:15})
+    // .isLength({max:15})
     .not()
     .isEmpty(),
 
