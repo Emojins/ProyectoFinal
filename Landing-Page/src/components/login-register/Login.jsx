@@ -38,10 +38,11 @@ const IniciarSesion = () => {
         console.log('llegue aca')
         console.log('Registro: ', registro)
         console.log(opciones)
-        const respuesta = await fetch('http://localhost:4000/login', opciones)
-        console.log('pase el fecth')
+        const respuesta = await fetch('http://localhost:5000/login', opciones)
+        console.log('pase el fetch')
         if (!respuesta.ok) {
           alert('Revise las credenciales y vuelva a intentarlo')
+          return
         }
         console.log('Logueado!', respuesta.username)
         window.location = '/home'

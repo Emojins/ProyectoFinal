@@ -2,9 +2,13 @@ import React from 'react';
 import classNames from 'classnames';
 import { SectionTilesProps } from '../../../utils/SectionProps';
 import SectionHeader from '../partials/SectionHeader';
+import Cta from './Buscador';
 
+import Playlist from "./cards/tarjetasPlaylist"
+import Artistas from "./cards/tarjetasArtistas.jsx"
+import Productores from "./cards/tarjetasProductores"
+import ImagenPrincipal from './ImagenPrincipl';
 
-import Cards from "./cards/tarjetas.jsx"
 const propTypes = {
   ...SectionTilesProps.types
 }
@@ -44,29 +48,38 @@ const HomePrincipal = ({
     pushLeft && 'push-left'
   );
 
-  const sectionHeader = {
-    title: 'A continuacion estas son algunas de nuestras tarjetas de playlists', 
-    paragraph: 'Estas son características de la aplicación. Comparte tus ideas o listas de reproducción con nosotros.'
-  };
-
   return (
+    <>
+     <ImagenPrincipal/>
+     <br></br>
+     <br></br>
     <section
       {...props}
       className={outerClasses}
     >
+       
       <div className="container">
         <div className={innerClasses}>
-          <SectionHeader data={sectionHeader} className="center-content" />
            <div className={tilesClasses}>
             <div className="reveal-from-bottom">
-
-                  <Cards/>
-
+                 <h1>PLAYLIST</h1>
+                  <Playlist/>
+                  
+            </div>
+            <div className="reveal-from-bottom">
+                <h1>ARTISTAS</h1>
+                  <Artistas/>
+            </div>
+            <div className="reveal-from-bottom">
+                 <h1>PRODUCTORES</h1>
+                  <Productores/>
             </div>
            </div>
         </div>
       </div>
     </section>
+    <Cta split />
+    </>
   );
 }
 
