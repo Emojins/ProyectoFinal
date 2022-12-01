@@ -28,10 +28,10 @@ app.get('/',(req,res)=>{
 })
 
 //** 
-puerto=process.env.PORT || 4000
+puerto=process.env.PORT || 4002
 
 app.listen(puerto,()=>{
-console.log(`se inicio el servidor en http://localhost:4000`)
+console.log(`se inicio el servidor en http://localhost:4002`)
 })
 
 

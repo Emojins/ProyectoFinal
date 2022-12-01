@@ -16,13 +16,46 @@ const Sidebar = () => {
 
   const playlistRef = useRef(null)
   const playlists = Object.keys(state.playlists)
+  const Subir= () => {
+
+
+    const opciones={
+        method: 'POST',
+        body: formdata,
+        redirect: 'follow'
+    }
+    const handleInput=({target})=>{
+      setState({...state,
+         [target.name]:target.value
+        });
+      console.log(target.value);
+    }
+    const handleSubmit=({target})=>{  
+      
+      (async ()=>{
+      const respuesta = await fetch('http://localhost:3003/tracks/', opciones)
+      .then(response => response.json())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+      if (respuesta.ok){
+          return alert('Subido')
+      }
+      })()
+      
+    }
+      return (
+        <div>
+          <input>musica</input>
+        </div>
+      )
+    }
 
   const addPlaylist = e => {
     e.preventDefault()
     const list = playlistRef.current.value
-
+    
     dispatch({ type: 'ADD_PLAYLIST', playlist: list })
-
+    
     setState({
       ...sidebarState,
       modal: false,
@@ -32,16 +65,25 @@ const Sidebar = () => {
 
   const handleModal = () =>
     setState({ ...sidebarState, modal: !sidebarState.modal })
+    
+    return (
+      <ul className="Sidebar" css={CSS}>
+        <a href="http://localhost:3000/home"><img src={logo}/></a>
+     
 
-  return (
-    <ul className="Sidebar" css={CSS}>
-      <img src={logo} />
-
+      <li className="library">Pobeat</li>
+      <li><a href="http://localhost:3001">Chat Global</a></li>
+      <li><a href="#">Subir Música</a></li>
+       <form>
+        <input onChange={Subir} type="file" id="buscarMusica" className= "form-control"></input>
+        <button onclick={Subir}>Subir</button>
+       </form>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <li className="library">Library</li>
-      <li 
-       href="#"
-        className="playlist"
-      >Chat Global</li>
+
 
       {playlists.map(list => (
         <li
@@ -54,6 +96,7 @@ const Sidebar = () => {
         </li>
        
       ))}
+     
 
       <li className="new-playlist" onClick={handleModal}>
         <i className="fa fa-plus-circle" />
@@ -172,5 +215,6 @@ const CSS = css`
     }
   }
 `
+
 
 export default Sidebar

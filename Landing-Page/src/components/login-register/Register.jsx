@@ -44,7 +44,7 @@ const handleSubmit=(e)=>{
     console.log('llegue aca')
     console.log('Registro: ', registro)
     console.log(opciones)
-    const respuesta = await fetch('http://localhost:5000/usuario', opciones)
+    const respuesta = await fetch('http://localhost:4002/usuario', opciones)
     console.log('pase el fecth')
     if (!respuesta.ok){
         return alert('Revise las credenciales yss')
