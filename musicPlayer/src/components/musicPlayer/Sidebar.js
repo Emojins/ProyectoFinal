@@ -16,39 +16,6 @@ const Sidebar = () => {
 
   const playlistRef = useRef(null)
   const playlists = Object.keys(state.playlists)
-  const Subir= () => {
-
-
-    const opciones={
-        method: 'POST',
-        body: formdata,
-        redirect: 'follow'
-    }
-    const handleInput=({target})=>{
-      setState({...state,
-         [target.name]:target.value
-        });
-      console.log(target.value);
-    }
-    const handleSubmit=({target})=>{  
-      
-      (async ()=>{
-      const respuesta = await fetch('http://localhost:3003/tracks/', opciones)
-      .then(response => response.json())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
-      if (respuesta.ok){
-          return alert('Subido')
-      }
-      })()
-      
-    }
-      return (
-        <div>
-          <input>musica</input>
-        </div>
-      )
-    }
 
   const addPlaylist = e => {
     e.preventDefault()
@@ -70,20 +37,35 @@ const Sidebar = () => {
       <ul className="Sidebar" css={CSS}>
         <a href="http://localhost:3000/home"><img src={logo}/></a>
      
-
-      <li className="library">Pobeat</li>
+       <li className="library">Pobeat</li>
       <li><a href="http://localhost:3001">Chat Global</a></li>
-      <li><a href="#">Subir Música</a></li>
-       <form>
-        <input onChange={Subir} type="file" id="buscarMusica" className= "form-control"></input>
-        <button onclick={Subir}>Subir</button>
+      <li><a href="">Subir Música:</a></li> 
+      <br></br>
+       <form id="uploadForm">
+        <input type="file" id="myFiles"/>
+        <button>Subir</button>
        </form>
+          
       <br></br>
       <br></br>
-      <br></br>
-      <br></br>
-      <li className="library">Library</li>
+      <li className='library'>LISTAS</li>
+      <li>Rock</li>
+      <li>Pop</li>
+      <li>Jazz</li>
+      <li>Reggaeton</li>
+      <li>Clásica</li>
+      <li>K-pop</li>  
 
+      <br></br>
+      <br></br>
+      <li className="library">CREADORES</li>
+      <li>Artistas</li>
+      <li>Productores</li>
+      <br></br>
+      <br></br>
+
+      <li className="library">TU SECCIÓN:</li>
+      
 
       {playlists.map(list => (
         <li
@@ -100,7 +82,7 @@ const Sidebar = () => {
 
       <li className="new-playlist" onClick={handleModal}>
         <i className="fa fa-plus-circle" />
-        <span>New Playlist</span>
+        <span>Nueva Lista</span>
       </li>
 
       <Modal show={sidebarState.modal} close={handleModal}>
@@ -127,9 +109,10 @@ const Sidebar = () => {
         close={() => setState({ ...sidebarState, toast: '' })}
       />
     </ul>
+    
   )
 }
-
+           
 const CSS = css`
   width: 200px;
   height: 100%;
