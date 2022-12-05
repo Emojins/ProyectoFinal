@@ -121,10 +121,10 @@ const HeaderHome = ({
                       className="list-reset header-nav-right"
                     >
                       <li>
-                        <a href="http://localhost:3001/" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Chat Global</a>
+                        <a href="http://localhost:3000/" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Chat Global</a>
                       </li>
                       <li>
-                        <Link to="./404" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Sobre Nosotros</Link>
+                        <a href="http://localhost:3005/" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Crear tu perfil</a>
                       </li>
                     </ul>
                     }

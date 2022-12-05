@@ -90,7 +90,7 @@ const CSS = css`
   height: 80px;
   background: #282828;
   z-index: 99;
-  padding: 0 20px;
+ 
   display: flex;
   align-items: center;
   justify-content: space-between;

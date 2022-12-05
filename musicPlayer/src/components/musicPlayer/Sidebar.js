@@ -35,37 +35,22 @@ const Sidebar = () => {
     
     return (
       <ul className="Sidebar" css={CSS}>
-        <a href="http://localhost:3000/home"><img src={logo}/></a>
+        <a href="http://localhost:3001/home"><img src={logo}/></a>
      
        <li className="library">Pobeat</li>
-      <li><a href="http://localhost:3001">Chat Global</a></li>
+      <li><a href="http://localhost:3000">Chat Global</a></li>
       <li><a href="">Subir Música:</a></li> 
       <br></br>
        <form id="uploadForm">
-        <input type="file" id="myFiles"/>
+        <input type="file" id="myFiles" accept="audio/mp3" multiple/>
         <button>Subir</button>
        </form>
-          
-      <br></br>
-      <br></br>
-      <li className='library'>LISTAS</li>
-      <li>Rock</li>
-      <li>Pop</li>
-      <li>Jazz</li>
-      <li>Reggaeton</li>
-      <li>Clásica</li>
-      <li>K-pop</li>  
-
-      <br></br>
-      <br></br>
+ <br></br>
       <li className="library">CREADORES</li>
-      <li>Artistas</li>
-      <li>Productores</li>
+      <li><a href="http://localhost:3005">Artistas</a></li>
+      <li><a href="http://localhost:3005">Productores</a></li>
       <br></br>
-      <br></br>
-
-      <li className="library">TU SECCIÓN:</li>
-      
+      <li className="library">Tu sección:</li>
 
       {playlists.map(list => (
         <li

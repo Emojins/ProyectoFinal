@@ -17,7 +17,7 @@ app.post('/upload',
         console.log(files)
 
         Object.keys(files).forEach(key => {
-            const filepath = path.join(__dirname, '../../../dist/files', files[key].name)
+            const filepath = path.join(__dirname, '../../../dist/media', files[key].name)
             files[key].mv(filepath, (err) => {
                 if (err) return res.status(500).json({ status: "error", message: err })
             })
