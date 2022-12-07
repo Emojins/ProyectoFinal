@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
 import Logo from './partials/Logo';
 
 const propTypes = {
@@ -29,45 +28,19 @@ const HeaderHome = ({
   bottomDivider,
   ...props
 }) => {
-
-  const [isActive, setIsactive] = useState(false);
+const [user, setUser] = useState("Anónimo");
+const logout = () => {
+  localStorage.removeItem('user');
+  setUser("Anónimo");
+}
+const login = () => {
+  localStorage.setItem('user', JSON.stringify("Anónimo"));
+}
+useEffect(() => {
+  login();
+}, []);
 
   const nav = useRef(null);
-  const hamburger = useRef(null);
-
-  useEffect(() => {
-    isActive && openMenu();
-    document.addEventListener('keydown', keyPress);
-    document.addEventListener('click', clickOutside);
-    return () => {
-      document.removeEventListener('keydown', keyPress);
-      document.removeEventListener('click', clickOutside);
-      closeMenu();
-    };
-  });  
-
-  const openMenu = () => {
-    document.body.classList.add('off-nav-is-active');
-    nav.current.style.maxHeight = nav.current.scrollHeight + 'px';
-    setIsactive(true);
-  }
-
-  const closeMenu = () => {
-    document.body.classList.remove('off-nav-is-active');
-    nav.current && (nav.current.style.maxHeight = null);
-    setIsactive(false);
-  }
-
-  const keyPress = (e) => {
-    isActive && e.keyCode === 27 && closeMenu();
-  }
-
-  const clickOutside = (e) => {
-    if (!nav.current) return
-    if (!isActive || nav.current.contains(e.target) || e.target === hamburger.current) return;
-    closeMenu();
-  }  
-
   const classes = classNames(
     'site-header',
     bottomOuterDivider && 'has-bottom-divider',
@@ -88,23 +61,11 @@ const HeaderHome = ({
           <Logo />
           {!hideNav &&
             <>
-              <button
-                ref={hamburger}
-                className="header-nav-toggle"
-                onClick={isActive ? closeMenu : openMenu}
-              >
-                <span className="screen-reader">Menu</span>
-                <span className="hamburger">
-                  <span className="hamburger-inner"></span>
-                </span>
-              </button>
               <nav
-              
                 ref={nav}
                 className={
                   classNames(
-                    'header-nav',
-                    isActive && 'is-active'
+                    'header-nav','is-active'
                   )}>
                 <div className="header-nav-inner">
                   <ul className={
@@ -113,7 +74,7 @@ const HeaderHome = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <a href="http://localhost:8080/" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Reproductor</a>
+                      <a href="http://localhost:8080/" className="button button-primary button-wide-mobile button-sm">Reproductor</a>
                     </li>
                   </ul>
                   {!hideSignin &&
@@ -121,10 +82,10 @@ const HeaderHome = ({
                       className="list-reset header-nav-right"
                     >
                       <li>
-                        <a href="http://localhost:3000/" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Chat Global</a>
+                        <a href="http://localhost:3005/" className="button button-primary button-wide-mobile button-sm">Crear tu perfil</a>
                       </li>
                       <li>
-                        <a href="http://localhost:3005/" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Crear tu perfil</a>
+                        <a className="button button-primary button-wide-mobile button-sm" onclick={logout} href= "http://localhost:3000">Salir</a>
                       </li>
                     </ul>
                     }

@@ -7,9 +7,6 @@ const IniciarSesion = () => {
     'Content-Type': 'application/json'
     }
   }
-    
-    
-
     const [registro,setRegistro]=useState({
         username:"",
         password:"" 
@@ -23,13 +20,12 @@ const IniciarSesion = () => {
     
     })
     console.log(target.value)
-    
+   
     
     }
     
     const handleSubmit=(e)=>{
         e.preventDefault();
-        
         
         (async ()=>{
         
@@ -44,8 +40,10 @@ const IniciarSesion = () => {
           alert('Revise las credenciales y vuelva a intentarlo')
           return
         }
-        console.log('Logueado!', respuesta.username)
-        window.location = '/home'
+        alert('Logueado!')
+        setTimeout(function(){
+          window.location = '/home'
+      }, 3000);
         })()
         
                 

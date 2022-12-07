@@ -18,9 +18,6 @@ const [registro,setRegistro]=useState({
     role:"",
 
 });
-
-const [error, setError] = useState('');
-
 const handleInput=({target})=>{
 setRegistro({
 ...registro,
@@ -49,8 +46,11 @@ const handleSubmit=(e)=>{
     if (!respuesta.ok){
         return alert('Revise las credenciales yss')
     }
-    console.log('Registrado!')
-    window.location = '/login'
+    alert('Registrado!')
+    setTimeout(function(){
+        window.location = '/login'
+    }, 3000);
+    
     })()
     
     }
